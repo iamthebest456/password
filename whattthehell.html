@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Screen</title>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var password = document.getElementById("password").value;
+            checkPassword(password);
+        });
+
+        function checkPassword(password) {
+            var correctPassword = "your_password_here"; // Change this to your desired password
+            if (password === correctPassword) {
+                document.getElementById("result").innerText = "Password correct. Access granted.";
+                window.open('https://sites.google.com/view/beltersgameplace', '_blank');
+            } else {
+                document.getElementById("result").innerText = "Incorrect password. Please try again. Hint: it is a nickname I call belter that ends in WA";
+            }
+        }
+    </script>
+</body>
+</html>
